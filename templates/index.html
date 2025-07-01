@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Job Post Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            padding: 40px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+        input[type=submit] {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>🕵️ Fake Job Post Detector</h2>
+    <form action="/predict" method="post">
+        <textarea name="job_text" placeholder="Paste job description here..."></textarea><br><br>
+        <input type="submit" value="Check">
+    </form>
+    {% if prediction_text %}
+        <div class="result">
+            <strong>Result:</strong> {{ prediction_text }}
+        </div>
+    {% endif %}
+</body>
+</html>

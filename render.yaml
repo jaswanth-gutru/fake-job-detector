@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: fake-job-detector
+    runtime: python
+    buildCommand: ""
+    startCommand: python app.py
+    env: python
